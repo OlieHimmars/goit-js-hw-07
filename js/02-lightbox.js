@@ -12,19 +12,7 @@ var lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDe
 function galleryHandler(galleryItems) {
     return galleryItems
         .map(({ preview, original, description }) => {
-            return '<a class="gallery__link" href="${original}"><img class="gallery__image" src="${preview}" data-source="${original}" alt="${description}" /></a >';
+            return `<a class="gallery__link" href="${original}"><img class="gallery__image" src="${preview}" data-source="${original}" alt="${description}" /></a >`;
         })
         .join("");
 };
-
-
-
-/*galleryEl.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.target.nodeName !== "IMG") {
-        return;
-    };
-    const bigImage = e.target.getAttribute("data-source");
-    const instance = basicLightbox.create('<img src="${bigImage}" width="800"px height="600"px>');
-    instance.show();
-});*/
