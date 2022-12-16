@@ -7,7 +7,7 @@ const galleryEl = document.querySelector('.gallery');
 const imagesMarkup = galleryHandler(galleryItems);
 galleryEl.insertAdjacentHTML('beforeend', imagesMarkup);
 
-var lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+var lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250, });
 
 function galleryHandler(galleryItems) {
     return galleryItems
@@ -17,7 +17,9 @@ function galleryHandler(galleryItems) {
         .join("");
 };
 
-galleryEl.addEventListener('click', (e) => {
+
+
+/*galleryEl.addEventListener('click', (e) => {
     e.preventDefault();
     if (e.target.nodeName !== "IMG") {
         return;
@@ -25,4 +27,4 @@ galleryEl.addEventListener('click', (e) => {
     const bigImage = e.target.getAttribute("data-source");
     const instance = basicLightbox.create('<img src="${bigImage}" width="800"px height="600"px>');
     instance.show();
-});
+});*/
